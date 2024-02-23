@@ -1,0 +1,18 @@
+.searchBox{
+    width: 310px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.searchBox label{
+    color: aqua;
+    margin-bottom: 5px;
+}
+.searchBox input{
+width: 100%;
+}
+.searchBox input:focus-visible {
+    /* outline: none; */
+    background-color: aquamarine;
+  }

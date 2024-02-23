@@ -1,0 +1,52 @@
+.contactBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 310px;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.contactBoxItem {
+    padding: 5px;
+  width: 310px;
+  border: 1px solid olive;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .contactBox {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contactBoxItem {
+    margin: 0;
+    flex-basis: calc((100% - 10px) / 2);
+  }
+}
+@media (min-width: 1024px) {
+    .contactBox {
+      width: 1024px;
+    }
+  
+    .contactBoxItem {
+           flex-basis: calc((100% - 10px) / 4);
+    }
+  }
+  /* ------------------ */
+  .contactBoxContact{
+    display: flex;
+    justify-content: space-between;
+}
+.contactBoxName{
+    text-align: start;
+}
+.contactBoxNumber{
+    composes:contactBoxName;
+}
+.contactBoxButton{
+    margin: auto 0;
+    width: 83px;
+    height: 41px;
+}
