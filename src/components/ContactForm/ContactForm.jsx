@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import css from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/operations';
-// import { addContact } from '../../redux/contactsSlice';
 
 const feedbackSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!').required('Required'),
@@ -17,14 +16,12 @@ const feedbackSchema = Yup.object().shape({
 const ContactForm = () => {
   const dispatch = useDispatch();
 
-  const onSubmitFormik = ({name,number}, actions) => {
+  const onSubmitFormik = ({ name, number }, actions) => {
     actions.resetForm();
     const contactData = {
-      // createdAt: new Date().toISOString(),
       name: name,
       phone: number.replace(/(\d{3})(\d{3})(\d{2})/, '$1-$2-$3'),
-      // id: nameId
-  };
+    };
     dispatch(addContact(contactData));
   };
 
